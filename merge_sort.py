@@ -32,10 +32,9 @@ def merge_sort(array):
         elif a[i] < b[j]:
             c.append(a[i])
             i += 1
-        elif b[j] < a[i]:
+        elif b[j] <= a[i]:
             c.append(b[j])
             j += 1
-        # currently ignores duplicate numbers
     return c
 
 
@@ -49,4 +48,11 @@ class TestMergeSort(unittest.TestCase):
         array = list(range(0, 90))
         random.shuffle(array)
         sorted_array = merge_sort(array)
-        assert sorted_array == list(range(0, 90))
+        assert sorted_array == sorted(array)
+
+    def test_merge_sort_duplicates(self):
+        """Tests handling of duplicates
+        """
+        array = [6, 4, 9, 2, 1, 2, 6, 2]
+        sorted_array = merge_sort(array)
+        assert sorted_array == sorted(array)
