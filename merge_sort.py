@@ -56,3 +56,21 @@ class TestMergeSort(unittest.TestCase):
         array = [6, 4, 9, 2, 1, 2, 6, 2]
         sorted_array = merge_sort(array)
         assert sorted_array == sorted(array)
+
+    def test_empty(self):
+        """Tests empty-list edge case
+        """
+        assert merge_sort([]) == []
+
+    def test_single_element(self):
+        """Tests empty-list edge case
+        """
+        assert merge_sort([2]) == [2]
+
+    def test_odd_elements(self):
+        """Tests odd number of elements
+        """
+        array = list(range(0, 91))
+        random.shuffle(array)
+        sorted_array = merge_sort(array)
+        assert sorted_array == sorted(array)
