@@ -42,7 +42,7 @@ class TestMergeSort(unittest.TestCase):
     """Test cases for Merge Sort
     """
 
-    def test_merge_sort_unique(self):
+    def test_unique(self):
         """Tests merge sort on array with unique elements
         """
         array = list(range(0, 90))
@@ -50,7 +50,7 @@ class TestMergeSort(unittest.TestCase):
         sorted_array = merge_sort(array)
         assert sorted_array == sorted(array)
 
-    def test_merge_sort_duplicates(self):
+    def test_duplicates(self):
         """Tests handling of duplicates
         """
         array = [6, 4, 9, 2, 1, 2, 6, 2]
@@ -63,7 +63,7 @@ class TestMergeSort(unittest.TestCase):
         assert merge_sort([]) == []
 
     def test_single_element(self):
-        """Tests empty-list edge case
+        """Tests single element edge case
         """
         assert merge_sort([2]) == [2]
 
